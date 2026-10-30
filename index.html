@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Lairds Inn - Restaurant & Bar. Sunday Carvery, main menu, wines and drinks. Book a table online.">
+  <title>The Lairds Inn | Restaurant & Bar</title>
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --text: #2b2b2b;
+      --accent: #7a4a1d;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c1a17;
+        --text: #f1ece4;
+        --accent: #e0a96d;
+        --muted: #aaa;
+        --card: #272420;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header.hero {
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #333 url("photo.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+    header.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content { position: relative; padding: 2rem 1rem; }
+    .hero h1 {
+      margin: 0;
+      letter-spacing: 0.15em;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+    .hero p { margin: 0.5rem 0 0; }
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--accent);
+      text-align: center;
+      padding: 0.75rem 1rem;
+      z-index: 10;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.6rem;
+      font-weight: bold;
+    }
+    nav a:hover, nav a:focus { text-decoration: underline; }
+    main { max-width: 800px; margin: 0 auto; padding: 1rem; }
+    section { padding: 2rem 0; scroll-margin-top: 4rem; }
+    h2 {
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.3rem;
+    }
+    .note { font-style: italic; color: var(--muted); text-align: center; }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--card);
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.6rem;
+      border-radius: 6px;
+    }
+    .item small { display: block; color: var(--muted); }
+    .price { white-space: nowrap; font-weight: bold; }
+    form { display: grid; gap: 0.8rem; }
+    form label { display: grid; gap: 0.3rem; font-weight: bold; }
+    input, select, textarea {
+      font: inherit;
+      padding: 0.6rem;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      background: var(--card);
+      color: var(--text);
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    button {
+      font: inherit;
+      font-weight: bold;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { opacity: 0.9; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--accent);
+    }
+    @media (max-width: 500px) {
+      nav a { display: inline-block; margin: 0.3rem 0.5rem; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>THE LAIRDS INN</h1>
+      <p>Restaurant &amp; Bar</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#sunday">Sunday Carvery</a>
+    <a href="#food">Main Menu</a>
+    <a href="#drinks">Wines &amp; Drinks</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <p class="note">Please advise your server of any allergies or dietary requirements before ordering.</p>
+
+    <section id="sunday">
+      <h2>Sunday Carvery</h2>
+      <div class="item">
+        <div>Roast Beef<small>Roast potatoes, seasonal veg and gravy</small></div>
+        <span class="price">£00.00</span>
+      </div>
+      <div class="item">
+        <div>Roast Chicken<small>Roast potatoes, seasonal veg and gravy</small></div>
+        <span class="price">£00.00</span>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>Main Menu</h2>
+      <div class="item">
+        <div>Starter Name<small>Short description</small></div>
+        <span class="price">£00.00</span>
+      </div>
+      <div class="item">
+        <div>Main Course Name<small>Short description</small></div>
+        <span class="price">£00.00</span>
+      </div>
+    </section>
+
+    <section id="drinks">
+      <h2>Wines &amp; Drinks</h2>
+      <div class="item">
+        <div>House Red / White<small>Glass / Bottle</small></div>
+        <span class="price">£00.00</span>
+      </div>
+      <div class="item">
+        <div>Draught Beer<small>Pint</small></div>
+        <span class="price">£00.00</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Book a Table / Contact Us</h2>
+      <form id="contactForm">
+        <div class="row">
+          <label>Name
+            <input type="text" name="name" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" required>
+          </label>
+        </div>
+        <label>Your Email
+          <input type="email" name="email" required>
+        </label>
+        <div class="row">
+          <label>Date
+            <input type="date" name="date" required>
+          </label>
+          <label>Time
+            <input type="time" name="time" required>
+          </label>
+        </div>
+        <label>Number of Guests
+          <select name="guests" required>
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8+</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" rows="4" placeholder="Allergies, special occasion, etc."></textarea>
+        </label>
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>The Lairds Inn &middot; Restaurant &amp; Bar</p>
+    <p>Address: Your address here</p>
+    <p>Phone: <a href="tel:+440000000000">+44 0000 000000</a></p>
+    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>Opening hours: Mon–Sun 12:00 – 22:00</p>
+  </footer>
+
+  <script>
+    const RECEIVER_EMAIL = "your-email@example.com";
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const f = new FormData(this);
+      const subject = `Table booking request from ${f.get("name")}`;
+      const body =
+        `Name: ${f.get("name")}\n` +
+        `Phone: ${f.get("phone")}\n` +
+        `Email: ${f.get("email")}\n` +
+        `Date: ${f.get("date")}\n` +
+        `Time: ${f.get("time")}\n` +
+        `Guests: ${f.get("guests")}\n\n` +
+        `Message:\n${f.get("message") || "-"}`;
+
+      window.location.href =
+        `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+
+</body>
+</html>
